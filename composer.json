@@ -1,0 +1,30 @@
+{
+  "name": "prestaedit/passwordgenerator",
+  "description": "Password generator and sends e-mail notifications to customers and employees.",
+  "authors": [
+    {
+      "name": "Jonathan Danse"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0"
+  },
+  "require-dev": {
+    "php": ">=7.4",
+    "prestashop/php-dev-tools": "^v4.3.0"
+  },
+  "autoload": {
+    "classmap": [
+      "passwordgenerator.php"
+    ],
+    "exclude-from-classmap": []
+  },
+  "config": {
+    "preferred-install": "dist",
+    "prepend-autoloader": false
+  },
+  "scripts": {
+    "fixer": "./vendor/bin/php-cs-fixer fix --dry-run --diff --using-cache=no"
+  },
+  "type": "prestashop-module"
+}
