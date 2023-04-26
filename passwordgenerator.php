@@ -28,7 +28,6 @@ if (!defined('_PS_VERSION_')) {
     exit;
 }
 
-
 class PasswordGenerator extends Module
 {
     public function __construct()
