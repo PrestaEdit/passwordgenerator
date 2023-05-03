@@ -34,7 +34,7 @@ class PasswordGenerator extends Module
     {
         $this->name = 'passwordgenerator';
         $this->tab = 'administration';
-        $this->version = '1.3.0';
+        $this->version = '1.3.1';
         $this->author = 'PrestaEdit';
         $this->ps_versions_compliancy = array('min' => '1.5.0.1', 'max' => _PS_VERSION_);
         $this->need_instance = 0;
