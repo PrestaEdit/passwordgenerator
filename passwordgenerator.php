@@ -126,15 +126,21 @@ class PasswordGenerator extends Module
             'label' => $this->getTranslator()->trans('Send by mail', [], 'Modules.PasswordGenerator.Displayadmincustomersform'),
             'required' => false,
         ]);
-        $formBuilder->add('generator', \Symfony\Component\Form\Extension\Core\Type\ButtonType::class, [
+
+        $codeParams = [
             'label' => $this->getTranslator()->trans('Generate code', [], 'Modules.PasswordGenerator.Displayadmincustomersform'),
-            'row_attr' => ['class' => 'row'],
             'attr' => [
                 'class' => 'offset-4 col-sm-3 input-container btn btn-default',
                 'id' => 'passwd-generate-field',
                 'onclick' => 'passwordGeneratorGenerateCode(10);',
-            ],
-        ]);
+            ]
+        ];
+
+        if (version_compare(_PS_VERSION_, '8.0.0', '>')) {
+            $codeParams['row_attr'] = ['class' => 'row'];
+        }
+
+        $formBuilder->add('generator', \Symfony\Component\Form\Extension\Core\Type\ButtonType::class, $codeParams);
 
         $params['data']['send_mail'] = false;
 
